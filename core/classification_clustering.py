@@ -10,19 +10,12 @@ from sklearn.cluster import KMeans
 
 def get_feature_names(df):
     return df.columns.tolist()
-
-# الكود الجديد والمضمون جوه ملف زميلك:
 def run_classification(df, target_column, algorithm, params):
     X = df.drop(columns=[target_column]).select_dtypes(exclude=['object']) # <--- زود دي هنا
     y = df[target_column]
-    
-    # التعديل البسيط: تحويل التارجت لنوع "category" أو "int" عشان يتقبل كـ Classification
     if y.dtype == 'float64' or y.dtype == 'float32':
-        y = y.astype('int') # تحويل الأرقام العشرية لأرقام صحيحة ليعتبرها الموديل فئات
-    
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    # ... باقي الكود بتاع زميلك زي ما هو بالظبط ...
-    
+        y = y.astype('int') 
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)    
     if algorithm == "Decision Tree":
         model = DecisionTreeClassifier(max_depth=params.get("max_depth"))
     elif algorithm == "Random Forest":
@@ -35,26 +28,17 @@ def run_classification(df, target_column, algorithm, params):
         model = LogisticRegression()
     else:
         model = DecisionTreeClassifier()
-
     model.fit(X_train, y_train)
     predictions = model.predict(X_test)
     accuracy = accuracy_score(y_test, predictions)
     report = classification_report(y_test, predictions)
-    # التعديل الصح في آخر الدالة:
     return model, accuracy, report, X_test, y_test
-
 def run_clustering(df, n_clusters):
     numeric_df = df.select_dtypes(include=['number'])
     kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init=10)
     clusters = kmeans.fit_predict(numeric_df)
     return kmeans, clusters
 
-
-# ============================================================
-# ================= الإضافات الجديدة فقط ====================
-# ============================================================
-
-# Bayesian Classifier (Gaussian Naive Bayes)
 def run_bayesian(df, target_column):
     from sklearn.naive_bayes import GaussianNB
     X = df.drop(columns=[target_column]).select_dtypes(exclude=['object'])
@@ -69,8 +53,6 @@ def run_bayesian(df, target_column):
     report = classification_report(y_test, predictions)
     return model, accuracy, report, X_test, y_test
 
-
-# Neural Network Classifier (MLP)
 def run_neural_network(df, target_column, hidden_layer_sizes=(100,), max_iter=300):
     from sklearn.neural_network import MLPClassifier
     X = df.drop(columns=[target_column]).select_dtypes(exclude=['object'])

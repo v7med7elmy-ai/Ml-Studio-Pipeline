@@ -106,21 +106,19 @@ K-Means (adjustable K via slider)
 
 ```
 ml-studio-pipeline/
-│
-├── app.py                        # Main entry point
+│                     
 ├── pages/
-│   ├── 00_upload.py              # File upload & data exploration
-│   ├── 01_preprocessing.py       # Full preprocessing pipeline
-│   ├── 02_visualization.py       # Data visualization
-│   └── 03_models.py              # Model training & evaluation
+│   ├── 00_upload.py             
+│   ├── 01_preprocessing.py       
+│   ├── 02_visualization.py      
+│   └── 03_models.py              
 ├── core/
-│   ├── p_ml.py                   # Preprocessing logic
-│   ├── visualization.py          # Plotting functions
+│   ├── p_ml.py                   
+│   ├── visualization.py          
 │   ├── classification_clustering.py
 │   ├── regression.py
 │   └── evaluation.py
-├── assets/                       # Static files
-├── screenshots/                  # App screenshots
+├── screenshots/                
 ├── requirements.txt
 └── README.md
 ```

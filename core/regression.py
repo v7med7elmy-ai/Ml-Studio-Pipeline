@@ -5,22 +5,20 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, r2_score
 
-
 def get_model(model_name, params):
     if model_name == "LinearRegression":
-        return LinearRegression() # الـ Linear هنا مش محتاج params
+        return LinearRegression() 
     elif model_name == "Ridge":
-        return Ridge(**params)      # <-- ضيف النجمتين دول هنا
+        return Ridge(**params)    
     elif model_name == "Lasso":
-        return Lasso(**params)      # <-- وضيقهم هنا كمان للأمان
+        return Lasso(**params)       
     elif model_name == "DecisionTree":
-        return DecisionTreeRegressor(**params) # <-- وهنا
+        return DecisionTreeRegressor(**params)
     elif model_name == "RandomForest":
-        return RandomForestRegressor(**params) # <-- وهنا
+        return RandomForestRegressor(**params)
     else:
         raise ValueError("Invalid model name")
     
-
 def regression_model(X, y, model_name, params={}, preprocessor=None):
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42)

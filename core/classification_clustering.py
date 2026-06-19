@@ -11,7 +11,7 @@ from sklearn.cluster import KMeans
 def get_feature_names(df):
     return df.columns.tolist()
 def run_classification(df, target_column, algorithm, params):
-    X = df.drop(columns=[target_column]).select_dtypes(exclude=['object']) # <--- زود دي هنا
+    X = df.drop(columns=[target_column]).select_dtypes(exclude=['object']) 
     y = df[target_column]
     if y.dtype == 'float64' or y.dtype == 'float32':
         y = y.astype('int') 

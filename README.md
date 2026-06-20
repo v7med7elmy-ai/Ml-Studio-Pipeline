@@ -7,7 +7,6 @@ An interactive AutoML web application built from scratch using Python and Stream
 ## 🎬 Demo
 
 > 📹 *(Add demo video here)*
-
 ## 🖼️ Screenshots
 
 | File Upload | Data Visualization |
@@ -17,10 +16,6 @@ An interactive AutoML web application built from scratch using Python and Stream
 | Preprocessing | Model Evaluation |
 |--------------|----------------|
 | ![Preprocessing](screenshots/preprocessing.png) | ![Evaluation](screenshots/model_evaluation.png) |
-<p align="center">
-  <img src="screenshots/evaluation.png" width="60%" />
-  <br/><em>Model Evaluation</em>
-</p>
 
 ---
 

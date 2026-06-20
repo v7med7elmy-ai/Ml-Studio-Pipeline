@@ -11,11 +11,11 @@ An interactive AutoML web application built from scratch using Python and Stream
 
 | File Upload | Data Visualization |
 |------------|-------------------|
-| ![Upload](screenshots/upload.png) | ![Visualization](screenshots/visualization.png) |
+| ![Upload](Screenshots/upload.png) | ![Visualization](Screenshots/visualization.png) |
 
 | Preprocessing | Model Evaluation |
 |--------------|----------------|
-| ![Preprocessing](screenshots/preprocessing.png) | ![Evaluation](screenshots/model_evaluation.png) |
+| ![Preprocessing](Screenshots/preprocessing.png) | ![Evaluation](Screenshots/model_evaluation.png) |
 
 ---
 
